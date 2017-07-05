@@ -1,41 +1,38 @@
 Do
 
 Do
-	If CmpColorEx("541|851|FFFFFF", 0.9) = 1 And CmpColorEx("541|851|FFFFFF", 0.9) = 1 Then 
+	If CmpColorEx("541|851|FFFFFF", 0.9)=1 Then 
+		Tap 541, 851
 		Delay 1000
+		TracePrint "1"
+	ElseIf CmpColorEx("359|683|FFFFFF", 0.9)=1 Or CmpColorEx("340|1040|FFFFFF", 0.9)=1Then 
+		TracePrint "2"
 		Exit Do
-	Else 
-		Tap 326, 1040
-		Delay 500
 	End If
 Loop
-
-Tap 591, 850
-Delay 500
 
 Do
-	If CmpColorEx("359|683|FFFFFF", 0.9) = 1 And CmpColorEx("407|687|FFFFFF", 0.9) Then 
+	If CmpColorEx("359|683|FFFFFF", 0.9)=1Then 
+		Tap 359, 683
 		Delay 1000
-		Exit Do
-	End If
-Loop
-
-Tap 359, 683
-Delay 500
-
-
-Do
-	If CmpColorEx("280|1033|000000", 0.9) = 1 And CmpColorEx("374|1046|FFFFFF", 0.9) Then 
-		Delay 1000
+		TracePrint "3"
+	ElseIf CmpColorEx("541|851|FFFFFF", 0.9)=1 Or CmpColorEx("340|1040|FFFFFF", 0.9)=1Then 
+		TracePrint "4"
 		Exit Do
 	Else 
-		Tap 326, 1040
-		
+		Tap 359, 683
 	End If
 Loop
 
-Tap 326, 1040
-Delay 500
-
+Do
+	If CmpColorEx("340|1040|FFFFFF", 0.9) = 1 Then 
+		Tap 340, 1040
+		Delay 1000
+		TracePrint "5"
+	ElseIf CmpColorEx("541|851|FFFFFF", 0.9) = 1 Or CmpColorEx("359|683|FFFFFF", 0.9) = 1 Then 
+		TracePrint "6"
+		Exit Do
+	End If
 Loop
 
+Loop
